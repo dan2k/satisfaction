@@ -1,0 +1,5 @@
+app:
+  url: "http://172.16.246.228/mpsicc/satisfaction/survey.php?type=COS"
+  api: "http://172.16.246.228/mpsicc/satisfaction/ckdup.php"
+  mode: "developement"
+  apitest: "http://172.16.246.228/mpsicc/satisfaction/ckdup-test.php"
