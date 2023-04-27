@@ -29,7 +29,6 @@ func main() {
 	if err != nil {
 		panic(fmt.Errorf("fatal error config file: %s ", err))
 	}
-
     ipAddr:=getIp()
 	mode:=viper.GetString("app.mode")
 	var api string
