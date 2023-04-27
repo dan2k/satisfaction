@@ -31,10 +31,6 @@ func main() {
 	}
 
     ipAddr:=getIp()
-
-	// host := "172.16.246.228"
-	// host:=viper.GetString("app.host")
-	// api := fmt.Sprintf("http://%s/mpsicc/satisfaction/ckdup.php?ip=%s", host, ipAddr)
 	mode:=viper.GetString("app.mode")
 	var api string
 	if mode=="developement" {
@@ -42,8 +38,6 @@ func main() {
 	}else{
 		api = fmt.Sprintf("%s/ip=%s", viper.GetString("app.api"),ipAddr)
 	}
-    
-    // url := "https://www.google.co.th"
 	url:=viper.GetString("app.url")
     result,err :=getApi(api)
     if err !=nil{
