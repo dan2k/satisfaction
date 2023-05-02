@@ -45,16 +45,18 @@ func main() {
 	mac, err := getMacAddr()
 	if err != nil {
 		log.Fatal(err)
+		os.Exit(1)
 	}
 
-	fmt.Println(mac)
+	// fmt.Println(mac)
 	mode := viper.GetString("app.mode")
 	var api string
 	if mode == "developement" {
-		api = fmt.Sprintf("%s/ip=%s&mac=%s", viper.GetString("app.apitest"), ipAddr, mac)
+		api = fmt.Sprintf("%s?ip=%s&mac=%s", viper.GetString("app.apitest"), ipAddr, mac)
 	} else {
-		api = fmt.Sprintf("%s/ip=%s&mac=%s", viper.GetString("app.api"), ipAddr, mac)
+		api = fmt.Sprintf("%s?ip=%s&mac=%s", viper.GetString("app.api"), ipAddr, mac)
 	}
+	fmt.Println(api)
 	url := viper.GetString("app.url")
 	result, err := getApi(api)
 	if err != nil {
