@@ -73,7 +73,8 @@ func openUrl(url string) {
 	var cmd *exec.Cmd
 	switch runtime.GOOS {
 	case "windows":
-		cmd = exec.Command("cmd", "/c", "start", "chrome", url)
+		// cmd = exec.Command("cmd", "/c", "start", "chrome", url)
+		cmd = exec.Command("cmd", "/c", "start", "msedge", url)
 	case "darwin":
 		cmd = exec.Command("open", "-a", "Google Chrome", url)
 	default:
@@ -84,6 +85,7 @@ func openUrl(url string) {
 		fmt.Println("Error opening URL:", err)
 		os.Exit(1)
 	}
+	
 }
 func getIp() string {
 	// Get request

@@ -1,5 +1,5 @@
 @echo off
-set "TARGET_DIR=D:\dev\satisfaction"
+set "TARGET_DIR=C:\sw\satisfaction"
 set "TARGET_PATH=%TARGET_DIR%\satisfaction.vbs"
 set "SHORTCUT_NAME=satisfaction"
 set "STARTUP_FOLDER=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
